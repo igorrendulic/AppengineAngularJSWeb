@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app="App">
+  <head>
+    <meta charset="utf-8">
+    <base href="/">
+    
+    <title>Google Appengine Example with Angular avoiding 404 on Refresh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+  </head>
+  
+  <body>
+  	<div id="menu">
+  		<a href="/about">About Page</a>&nbsp;&nbsp;<a href="/contact">Contact Page</a>
+	</div>
+    <div class="container" ng-view></div>
+    
+    <script type="text/javascript" src="/js/angular.min.js"></script>
+    <script type="text/javascript" src="/js/angular-route.min.js"></script>
+  	<script src="/js/app.js"></script>
+  </body>
+</html>

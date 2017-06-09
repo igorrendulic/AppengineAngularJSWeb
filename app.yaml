@@ -1,0 +1,25 @@
+runtime: python27
+threadsafe: true
+api_version: 1
+instance_class: B1
+manual_scaling:
+  instances: 1
+
+handlers:
+- url: /css
+  static_dir: app/css
+  
+- url: /js
+  static_dir: app/js
+  
+- url: /fonts
+  static_dir: app/fonts
+  
+- url: /images
+  static_dir: app/images
+  
+- url: /partials
+  static_dir: app/partials
+  
+- url: /.*
+  script: main.APP
