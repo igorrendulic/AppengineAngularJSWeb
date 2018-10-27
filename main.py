@@ -1,16 +1,17 @@
 import os
 import webapp2
+import jinja2 #google.ext.webapp.template has been deprecated
 
-from google.appengine.ext.webapp import template
+JINJA_ENVIRONMENT = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
         
 class RefreshPageHandler(webapp2.RequestHandler):
-    def get(self):
-        path = os.path.join(os.path.dirname(__file__), 'app/index.html')
-        self.response.out.write(template.render(path, {}))
+    def get(self, path):
+        template_values = {}
+    	template = JINJA_ENVIRONMENT.get_template('app/index.html')
+        self.response.write(template.render(template_values))
 
 APP = webapp2.WSGIApplication([
-    ('/about', RefreshPageHandler),
-    ('/contact', RefreshPageHandler),
-    ('/', RefreshPageHandler),
+    ('/(.*)', RefreshPageHandler),
 ], debug=True)
