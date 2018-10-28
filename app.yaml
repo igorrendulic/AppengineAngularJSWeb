@@ -23,3 +23,7 @@ handlers:
   
 - url: /.*
   script: main.APP
+  
+libraries:
+  name: jinja2
+  -version: latest
